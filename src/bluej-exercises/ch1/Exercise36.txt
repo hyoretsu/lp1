@@ -1,0 +1,1 @@
+Não, pois é impossível uma variável ter dois tipos diferentes.

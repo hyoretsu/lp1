@@ -1,0 +1,7 @@
+Integer 0
+String "hello"
+Integer 101
+Integer -1
+Boolean true
+String "33"
+Float 3.1415
