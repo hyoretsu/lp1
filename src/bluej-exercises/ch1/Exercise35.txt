@@ -1,1 +1,0 @@
-É um objeto da classe Livro
