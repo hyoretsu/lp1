@@ -55,4 +55,9 @@ public class TicketMachine {
   // Clear the balance.
   balance = 0;
  }
+
+ // Exercise 2.37
+ public void prompt() {
+  System.out.println("Please insert the correct amount of money.");
+ }
 }
