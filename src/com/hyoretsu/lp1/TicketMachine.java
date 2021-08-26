@@ -25,6 +25,11 @@ public class TicketMachine {
   total = 0;
  }
 
+ // Exercise 2.45
+ public void empty() {
+  this.total = 0;
+ }
+
  /** Return the amount of money already inserted for the next ticket. */
  public int getBalance() {
   return balance;
@@ -40,7 +45,10 @@ public class TicketMachine {
   return balance;
  }
 
- /** Receive an amount of money from a customer. */
+ /**
+  * Receive an amount of money from a customer. Check that the amount is
+  * sensible.
+  */
  public void insertMoney(int amount) {
   balance += amount;
  }
