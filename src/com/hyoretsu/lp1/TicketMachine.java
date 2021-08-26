@@ -25,9 +25,12 @@ public class TicketMachine {
   total = 0;
  }
 
- // Exercise 2.45
- public void empty() {
+ // Exercise 2.61
+ public Integer emptyMachine() {
+  Integer previousTotal = total;
   this.total = 0;
+
+  return previousTotal;
  }
 
  /** Return the amount of money already inserted for the next ticket. */
@@ -50,30 +53,48 @@ public class TicketMachine {
   * sensible.
   */
  public void insertMoney(int amount) {
-  balance += amount;
+  if (amount > 0) {
+   balance += amount;
+  } else {
+   System.out.println("Use a positive amount rather than: " + amount);
+  }
  }
 
  /**
-  * Print a ticket. Update the total collected and reduce the balance to zero.
+  * Print a ticket if enough money has been inserted, and reduce the current
+  * balance by the ticket price. Print an error message if more money is
+  * required.
   */
  public void printTicket() {
-  // Simulate the printing of a ticket.
-  System.out.println("##################");
-  System.out.println("# The BlueJ Line");
-  System.out.println("# Ticket");
-  System.out.println("# " + price + " cents.");
-  System.out.println("##################");
-  System.out.println();
+  if (balance >= price) {
+   // Simulate the printing of a ticket.
+   System.out.println("##################");
+   System.out.println("# The BlueJ Line");
+   System.out.println("# Ticket");
+   System.out.println("# " + price + " cents.");
+   System.out.println("##################");
+   System.out.println();
 
-  // Update the total collected with the balance.
-  total += balance;
-  // Clear the balance.
-  balance = 0;
+   // Update the total collected with the price.
+   total += price;
+   // Reduce the balance by the price.
+   balance -= price;
+  } else {
+   System.out.println("You must insert at least: " + (price - balance) + " more cents.");
+  }
  }
 
  // Exercise 2.37
  public void prompt() {
   System.out.println("Please insert the correct amount of money.");
+ }
+
+ /** Return the money in the balance. The balance is cleared. */
+ public int refundBalance() {
+  int amountToRefund;
+  amountToRefund = balance;
+  balance = 0;
+  return amountToRefund;
  }
 
  // Exercise 2.41
