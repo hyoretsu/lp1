@@ -41,9 +41,6 @@ public class Picture {
    sun.changeSize(80);
    sun.makeVisible();
 
-   // Exercise 1.18
-   sun.slowMoveVertical(250);
-
    drawn = true;
   }
  }
@@ -62,5 +59,10 @@ public class Picture {
   window.changeColor("black");
   roof.changeColor("green");
   sun.changeColor("yellow");
+ }
+
+ // Exercise 1.19
+ public void sunset() {
+  sun.slowMoveVertical(250);
  }
 }
