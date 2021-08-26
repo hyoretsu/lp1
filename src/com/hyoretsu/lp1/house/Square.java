@@ -1,4 +1,4 @@
-package com.hyoretsu.house;
+package com.hyoretsu.lp1.house;
 
 import java.awt.*;
 
@@ -105,7 +105,10 @@ public class Square {
   draw();
  }
 
- /** Change the color. Valid colors are "red", "yellow", "blue", "green", "magenta" and "black". */
+ /**
+  * Change the color. Valid colors are "red", "yellow", "blue", "green",
+  * "magenta" and "black".
+  */
  public void changeColor(String newColor) {
   color = newColor;
   draw();

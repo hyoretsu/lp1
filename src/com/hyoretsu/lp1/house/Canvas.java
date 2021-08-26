@@ -1,4 +1,4 @@
-package com.hyoretsu.house;
+package com.hyoretsu.lp1.house;
 
 import javax.swing.*;
 import java.awt.*;

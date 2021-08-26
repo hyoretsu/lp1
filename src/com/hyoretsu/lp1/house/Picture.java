@@ -1,4 +1,4 @@
-package com.hyoretsu.house;
+package com.hyoretsu.lp1.house;
 
 public class Picture {
  private Square wall;

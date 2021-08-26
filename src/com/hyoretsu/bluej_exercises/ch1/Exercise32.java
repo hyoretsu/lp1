@@ -1,3 +1,5 @@
+package com.hyoretsu.bluej_exercises.ch1;
+
 public class Exercise32 {
  private String name;
 
