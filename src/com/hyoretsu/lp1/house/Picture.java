@@ -5,6 +5,7 @@ public class Picture {
  private Square window;
  private Triangle roof;
  private Circle sun;
+ private Person stickman;
  private boolean drawn;
 
  /** Constructor for objects of class Picture */
@@ -13,6 +14,7 @@ public class Picture {
   window = new Square();
   roof = new Triangle();
   sun = new Circle();
+  stickman = new Person();
   drawn = false;
  }
 
@@ -64,5 +66,11 @@ public class Picture {
  // Exercise 1.19
  public void sunset() {
   sun.slowMoveVertical(250);
+
+  // Exercise 1.20
+  stickman.moveHorizontal(-300);
+  stickman.moveVertical(30);
+  stickman.makeVisible();
+  stickman.slowMoveHorizontal(160);
  }
 }
