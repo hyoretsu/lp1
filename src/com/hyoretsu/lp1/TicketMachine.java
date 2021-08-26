@@ -66,7 +66,10 @@ public class TicketMachine {
   * required.
   */
  public void printTicket() {
-  if (balance >= price) {
+  // Exercise 2.62
+  Integer amountLeftToPay = this.balance - this.price;
+
+  if (amountLeftToPay <= 0) {
    // Simulate the printing of a ticket.
    System.out.println("##################");
    System.out.println("# The BlueJ Line");
