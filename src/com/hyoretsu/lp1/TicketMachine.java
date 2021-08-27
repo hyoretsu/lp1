@@ -1,8 +1,12 @@
 package com.hyoretsu.lp1;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 public class TicketMachine {
  /** The price of a ticket from this machine. */
- private int price;
+ private Map<String, Integer> prices = new HashMap<>();
  /** The amount of money entered by a customer so far. */
  private int balance;
  /** The total amount of money collected by this machine. */
@@ -10,7 +14,7 @@ public class TicketMachine {
 
  /** Create a machine that issues tickets of 1000 cents each. */
  public TicketMachine() {
-  this.price = 1000;
+  prices.put("standard", 1000);
   balance = 0;
   total = 0;
  }
@@ -20,9 +24,13 @@ public class TicketMachine {
   * must be greater than zero, and there are no checks to ensure this.
   */
  public TicketMachine(Integer cost) {
-  this.price = cost;
+  prices.put("standard", cost);
   balance = 0;
   total = 0;
+ }
+
+ public void addNewPrice(String description, Integer price) {
+  prices.put(description, price);
  }
 
  // Exercise 2.61
@@ -38,9 +46,14 @@ public class TicketMachine {
   return balance;
  }
 
- /** @return the price of a ticket. */
- public int getPrice() {
-  return price;
+ /** Return the price of a specific kind of ticket. */
+ public Integer getPrice(String ticketType) {
+  return prices.get(ticketType);
+ }
+
+ /** Return all kinds of ticket prices available. */
+ public Set<String> getAvailablePrices() {
+  return prices.keySet();
  }
 
  // Exercise 2.26
@@ -65,25 +78,25 @@ public class TicketMachine {
   * balance by the ticket price. Print an error message if more money is
   * required.
   */
- public void printTicket() {
+ public void printTicket(String ticketType) {
   // Exercise 2.62
-  Integer amountLeftToPay = this.balance - this.price;
+  Integer amountLeftToPay = this.balance - this.prices.get(ticketType);
 
   if (amountLeftToPay <= 0) {
    // Simulate the printing of a ticket.
    System.out.println("##################");
    System.out.println("# The BlueJ Line");
    System.out.println("# Ticket");
-   System.out.println("# " + price + " cents.");
+   System.out.println("# " + prices.get(ticketType) + " cents.");
    System.out.println("##################");
    System.out.println();
 
    // Update the total collected with the price.
-   total += price;
+   total += this.prices.get(ticketType);
    // Reduce the balance by the price.
-   balance -= price;
+   balance -= this.prices.get(ticketType);
   } else {
-   System.out.println("You must insert at least: " + (price - balance) + " more cents.");
+   System.out.println("You must insert at least: " + (this.prices.get(ticketType) - balance) + " more cents.");
   }
  }
 
@@ -101,7 +114,7 @@ public class TicketMachine {
  }
 
  // Exercise 2.41
- public void showPrice() {
-  System.out.println("The price of a ticket is " + this.price + " cents.");
+ public void showPrice(String ticketType) {
+  System.out.println("The price of the selected kind of ticket is " + this.prices.get(ticketType) + " cents.");
  }
 }
