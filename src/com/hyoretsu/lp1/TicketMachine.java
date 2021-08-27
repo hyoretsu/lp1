@@ -15,6 +15,16 @@ public class TicketMachine {
   total = 0;
  }
 
+ /**
+  * Create a machine that issues tickets of the given price. Note that the price
+  * must be greater than zero, and there are no checks to ensure this.
+  */
+ public TicketMachine(Integer cost) {
+  this.price = cost;
+  balance = 0;
+  total = 0;
+ }
+
  /** Return the amount of money already inserted for the next ticket. */
  public int getBalance() {
   return balance;
