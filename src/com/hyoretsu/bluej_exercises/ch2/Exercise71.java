@@ -19,6 +19,10 @@ public class Exercise71 {
   return this.name;
  }
 
+ public void printDetails() {
+  System.out.println("The name of this person is " + this.name);
+ }
+
  public void setAge(Integer age) {
   this.age = age;
  }
