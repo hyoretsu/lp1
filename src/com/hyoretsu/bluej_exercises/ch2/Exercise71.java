@@ -18,4 +18,8 @@ public class Exercise71 {
  public String getName() {
   return this.name;
  }
+
+ public void setAge(Integer age) {
+  this.age = age;
+ }
 }
