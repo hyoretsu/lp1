@@ -3,6 +3,7 @@ package com.hyoretsu.lp1;
 public class Book {
  private String author;
  public Integer pages;
+ public String refNumber = "";
  private String title;
 
  /** Set the author and title fields when this object is constructed. */
@@ -20,6 +21,10 @@ public class Book {
   return this.pages;
  }
 
+ public String getRefNumber() {
+  return this.refNumber;
+ }
+
  public String getTitle() {
   return this.title;
  }
@@ -34,5 +39,9 @@ public class Book {
 
  public void printTitle() {
   System.out.println(this.title);
+ }
+
+ public void setRefNumber(String ref) {
+  this.refNumber = ref;
  }
 }
