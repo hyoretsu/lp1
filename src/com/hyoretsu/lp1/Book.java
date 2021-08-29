@@ -3,13 +3,16 @@ package com.hyoretsu.lp1;
 public class Book {
  private String author;
  public Integer borrowed = 0;
+ /** Records if the book is a text book in a course */
+ public Boolean courseText;
  public Integer pages;
  public String refNumber = "";
  private String title;
 
  /** Set the author and title fields when this object is constructed. */
- public Book(String bookAuthor, String bookTitle, Integer pages) {
+ public Book(String bookAuthor, String bookTitle, Integer pages, Boolean isTextbook) {
   author = bookAuthor;
+  this.courseText = isTextbook;
   this.pages = pages;
   title = bookTitle;
  }
@@ -36,6 +39,10 @@ public class Book {
 
  public String getTitle() {
   return this.title;
+ }
+
+ public Boolean isCourseText() {
+  return this.courseText;
  }
 
  public void printAuthor() {
