@@ -2,16 +2,22 @@ package com.hyoretsu.lp1;
 
 public class Book {
  private String author;
+ public Integer pages;
  private String title;
 
  /** Set the author and title fields when this object is constructed. */
- public Book(String bookAuthor, String bookTitle) {
+ public Book(String bookAuthor, String bookTitle, Integer pages) {
   author = bookAuthor;
+  this.pages = pages;
   title = bookTitle;
  }
 
  public String getAuthor() {
   return this.author;
+ }
+
+ public Integer getPages() {
+  return this.pages;
  }
 
  public String getTitle() {
