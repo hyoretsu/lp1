@@ -2,6 +2,7 @@ package com.hyoretsu.lp1;
 
 public class Book {
  private String author;
+ public Integer borrowed = 0;
  public Integer pages;
  public String refNumber = "";
  private String title;
@@ -13,8 +14,16 @@ public class Book {
   title = bookTitle;
  }
 
+ public void borrow() {
+  this.borrowed += 1;
+ }
+
  public String getAuthor() {
   return this.author;
+ }
+
+ public Integer getBorrowed() {
+  return this.borrowed;
  }
 
  public Integer getPages() {
@@ -41,6 +50,8 @@ public class Book {
   } else {
    bookDetails += ", Reference Number: ZZZ";
   }
+
+  bookDetails += "This book's been borrowed " + this.borrowed + " times";
 
   System.out.println(bookDetails);
  }
