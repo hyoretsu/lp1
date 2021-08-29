@@ -34,7 +34,15 @@ public class Book {
  }
 
  public void printDetails() {
-  System.out.println("Title: " + this.title + ", Author: " + this.author + ", Pages: " + this.pages);
+  String bookDetails = "Title: " + this.title + ", Author: " + this.author + ", Pages: " + this.pages;
+
+  if (this.refNumber.length() > 0) {
+   bookDetails += ", Reference Number: " + this.refNumber;
+  } else {
+   bookDetails += ", Reference Number: ZZZ";
+  }
+
+  System.out.println(bookDetails);
  }
 
  public void printTitle() {
