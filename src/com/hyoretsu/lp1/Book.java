@@ -28,6 +28,10 @@ public class Book {
   System.out.println(this.author);
  }
 
+ public void printDetails() {
+  System.out.println("Title: " + this.title + ", Author: " + this.author + ", Pages: " + this.pages);
+ }
+
  public void printTitle() {
   System.out.println(this.title);
  }
