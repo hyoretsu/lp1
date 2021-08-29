@@ -17,4 +17,12 @@ public class Book {
  public String getTitle() {
   return this.title;
  }
+
+ public void printAuthor() {
+  System.out.println(this.author);
+ }
+
+ public void printTitle() {
+  System.out.println(this.title);
+ }
 }
