@@ -40,7 +40,18 @@ public class Student {
   * the student's ID number.
   */
  public String getLoginName() {
-  return name.substring(0, 4) + id.substring(0, 3);
+  String nameLogin = this.name;
+  String idLogin = this.id;
+
+  if (this.name.length() > 4) {
+   nameLogin = this.name.substring(0, 4);
+  }
+
+  if (this.id.length() > 3) {
+   idLogin = this.id.substring(0, 3);
+  }
+
+  return nameLogin + idLogin;
  }
 
  /** Return the full name of this student. */
