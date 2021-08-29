@@ -50,6 +50,12 @@ public class Book {
  }
 
  public void setRefNumber(String ref) {
+  if (ref.length() >= 3) {
+   System.out.println("The given reference number's less than 3 characters-wide");
+
+   return;
+  }
+
   this.refNumber = ref;
  }
 }
