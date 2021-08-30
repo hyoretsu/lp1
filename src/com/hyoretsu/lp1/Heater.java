@@ -1,5 +1,6 @@
 package com.hyoretsu.lp1;
 
+// Exercise 2.93/94
 public class Heater {
  private Double increment;
  private Double max;

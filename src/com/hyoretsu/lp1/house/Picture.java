@@ -5,6 +5,7 @@ public class Picture {
  private Square window;
  private Triangle roof;
  private Circle sun;
+ // Exercise 1.20
  private Person stickman;
  private boolean drawn;
 
@@ -14,6 +15,7 @@ public class Picture {
   window = new Square();
   roof = new Triangle();
   sun = new Circle();
+  // Exercise 1.20
   stickman = new Person();
   drawn = false;
  }
@@ -41,6 +43,7 @@ public class Picture {
    sun.changeSize(80);
    sun.makeVisible();
 
+   // Exercise 3.37
    this.setColor();
 
    drawn = true;

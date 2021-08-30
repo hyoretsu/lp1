@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class TicketMachine {
- /** The price of a ticket from this machine. */
+ // Exercise 2.63
  private Map<String, Integer> prices = new HashMap<>();
  /** The amount of money entered by a customer so far. */
  private int balance;
@@ -14,6 +14,7 @@ public class TicketMachine {
 
  /** Create a machine that issues tickets of 1000 cents each. */
  public TicketMachine() {
+  // Exercise 2.43
   prices.put("standard", 1000);
   balance = 0;
   total = 0;

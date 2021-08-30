@@ -10,6 +10,7 @@ public class Student {
 
  /** Create a new student with a given name and ID number. */
  public Student(String fullName, String studentID) {
+  // Exercise 2.77
   if (fullName.length() < 4 || studentID.length() < 3) {
    System.out.println("Either the given name or ID is too short");
   }
@@ -40,6 +41,7 @@ public class Student {
   * the student's ID number.
   */
  public String getLoginName() {
+  // Exercise 2.78
   String nameLogin = this.name;
   String idLogin = this.id;
 
