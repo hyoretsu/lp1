@@ -118,6 +118,9 @@ public class Canvas {
    graphic.setColor(Color.magenta);
   } else if (colorString.equals("white")) {
    graphic.setColor(Color.white);
+  } else if (colorString.equals("brown")) {
+   // Exercise 3.41
+   graphic.setColor(new Color(150, 75, 0));
   } else {
    graphic.setColor(Color.black);
   }

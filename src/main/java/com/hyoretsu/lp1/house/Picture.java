@@ -7,6 +7,8 @@ public class Picture {
  private Circle sun;
  // Exercise 1.20
  private Person stickman;
+ // Exercise 3.41
+ private Tree tree;
  private boolean drawn;
 
  /** Constructor for objects of class Picture */
@@ -15,6 +17,8 @@ public class Picture {
   window = new Square();
   roof = new Triangle();
   sun = new Circle();
+  // Exercise 3.41
+  tree = new Tree();
   // Exercise 1.20
   stickman = new Person();
   drawn = false;
