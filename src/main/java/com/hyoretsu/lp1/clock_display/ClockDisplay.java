@@ -15,14 +15,12 @@ public class ClockDisplay {
   * set at 00:00.
   */
  public ClockDisplay() {
-  // Exercise 3.38
+  // Exercise 3.59
   this.hours = new NumberDisplay(12);
-  minutes = new NumberDisplay(60);
-  // Exercise 3.57
-  this.seconds = new NumberDisplay(60);
-  // Exercise 3.58
-  this.tenthSeconds = new NumberDisplay(10);
-  this.hundredthSeconds = new NumberDisplay(10);
+  this.minutes = new NumberDisplay(60, this.hours);
+  this.seconds = new NumberDisplay(60, this.minutes);
+  this.tenthSeconds = new NumberDisplay(10, this.seconds);
+  this.hundredthSeconds = new NumberDisplay(10, this.tenthSeconds);
 
   updateDisplay();
  }
@@ -32,14 +30,12 @@ public class ClockDisplay {
   * set at the time specified by the parameters.
   */
  public ClockDisplay(Integer hour, Integer minute, Integer second, Integer tenthSecond, Integer hundredthSecond) {
-  // Exercise 3.38
+  // Exercise 3.59
   this.hours = new NumberDisplay(12);
-  minutes = new NumberDisplay(60);
-  // Exercise 3.57
-  this.seconds = new NumberDisplay(60);
-  // Exercise 3.58
-  this.tenthSeconds = new NumberDisplay(10);
-  this.hundredthSeconds = new NumberDisplay(10);
+  this.minutes = new NumberDisplay(60, this.hours);
+  this.seconds = new NumberDisplay(60, this.minutes);
+  this.tenthSeconds = new NumberDisplay(10, this.seconds);
+  this.hundredthSeconds = new NumberDisplay(10, this.tenthSeconds);
 
   setTime(hour, minute, second, tenthSecond, hundredthSecond);
  }
@@ -48,26 +44,9 @@ public class ClockDisplay {
   * This method should get called every 0.01 seconds - it makes the clock display
   * go one hundredth of a second forward.
   */
+ // Exercise 3.59
  public void timeTick() {
-  // Exercise 3.58
   this.hundredthSeconds.increment();
-
-  if (this.hundredthSeconds.getValue() == 0) {
-   this.tenthSeconds.increment();
-
-   if (this.tenthSeconds.getValue() == 0) {
-    // Exercise 3.57
-    this.seconds.increment();
-
-    if (this.seconds.getValue() == 0) {
-     this.minutes.increment();
-
-     if (this.minutes.getValue() == 0) { // it just rolled over!
-      this.hours.increment();
-     }
-    }
-   }
-  }
 
   updateDisplay();
  }

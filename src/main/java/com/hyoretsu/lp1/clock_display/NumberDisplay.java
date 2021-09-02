@@ -2,6 +2,8 @@ package com.hyoretsu.lp1.clock_display;
 
 public class NumberDisplay {
  private int limit;
+ // Exercise 3.59
+ private NumberDisplay nextUnit = null;
  private int value;
 
  /**
@@ -14,6 +16,20 @@ public class NumberDisplay {
   this.limit = rollOverLimit == 12 ? 13 : rollOverLimit;
   // Start as 12h or continue to 0min
   this.value = rollOverLimit == 12 ? 12 : 0;
+ }
+
+ /**
+  * Constructor for objects of class NumberDisplay. Set the limit at which the
+  * display rolls over and the next unit of time to be updated.
+  */
+ // Exercise 3.59
+ public NumberDisplay(int rollOverLimit, NumberDisplay nextUnit) {
+  // If left as 12, there wouldn't be 12:00 since the hours would stop at 11
+  limit = rollOverLimit == 12 ? 13 : rollOverLimit;
+  // Start as 12h or continue to 0min
+  value = rollOverLimit == 12 ? 12 : 0;
+
+  this.nextUnit = nextUnit;
  }
 
  /** Return the current value. */
@@ -55,5 +71,10 @@ public class NumberDisplay {
   */
  public void increment() {
   value = (value + 1) % limit;
+
+  // Exercise 3.59
+  if (value == 0 && this.nextUnit != null) {
+   this.nextUnit.increment();
+  }
  }
 }
