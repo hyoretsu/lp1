@@ -31,7 +31,8 @@ public class NumberDisplay {
    this.value += 1;
   }
 
-  if (value < 10) {
+  // Exercise 3.58
+  if (this.value < 10 && this.limit > 10) {
    return "0" + value;
   } else {
    return "" + value;
