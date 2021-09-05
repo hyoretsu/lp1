@@ -43,6 +43,8 @@ public class MusicOrganizer {
 
  // Exercise 4.18
  public void listAllFiles() {
+  // Exercise 4.20
+  files.forEach(file -> System.out.println(file));
  }
 
  /**
@@ -54,6 +56,18 @@ public class MusicOrganizer {
   if (validIndex(index)) {
    String filename = files.get(index);
    System.out.println(filename);
+  }
+ }
+
+ /**
+  * Play a file in the collection. Only return once playing has finished.
+  *
+  * @param index The index of the file to be played.
+  */
+ public void playAndWait(int index) {
+  if (validIndex(index)) {
+   String filename = files.get(index);
+   player.playSample(filename);
   }
  }
 
@@ -74,8 +88,10 @@ public class MusicOrganizer {
   * @param index The index of the file to be played.
   */
  public void startPlaying(int index) {
-  String filename = files.get(index);
-  player.startPlaying(filename);
+  if (validIndex(index)) {
+   String filename = files.get(index);
+   player.startPlaying(filename);
+  }
  }
 
  /** Stop the player. */
