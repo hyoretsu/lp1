@@ -43,8 +43,10 @@ public class MusicOrganizer {
 
  // Exercise 4.18
  public void listAllFiles() {
-  // Exercise 4.20
-  files.forEach(file -> System.out.println(file));
+  // Exercise 4.24
+  for (Integer i = 0; i < files.size(); i++) {
+   System.out.println(i + ": " + files.get(i));
+  }
  }
 
  /**
