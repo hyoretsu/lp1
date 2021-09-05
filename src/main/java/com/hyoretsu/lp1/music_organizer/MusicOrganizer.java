@@ -5,10 +5,13 @@ import java.util.ArrayList;
 public class MusicOrganizer {
  /** An ArrayList for storing the file names of music files. */
  private ArrayList<String> files;
+ /** A player for the music files. */
+ private MusicPlayer player;
 
  /** Create a MusicOrganizer */
  public MusicOrganizer() {
   files = new ArrayList<>();
+  player = new MusicPlayer();
  }
 
  /**
@@ -38,6 +41,10 @@ public class MusicOrganizer {
   return files.size();
  }
 
+ // Exercise 4.18
+ public void listAllFiles() {
+ }
+
  /**
   * List a file from the collection.
   *
@@ -59,6 +66,21 @@ public class MusicOrganizer {
   if (validIndex(index)) {
    files.remove(index);
   }
+ }
+
+ /**
+  * Start playing a file in the collection. Use stopPlaying() to stop it playing.
+  *
+  * @param index The index of the file to be played.
+  */
+ public void startPlaying(int index) {
+  String filename = files.get(index);
+  player.startPlaying(filename);
+ }
+
+ /** Stop the player. */
+ public void stopPlaying() {
+  player.stop();
  }
 
  // Exercise 4.15
