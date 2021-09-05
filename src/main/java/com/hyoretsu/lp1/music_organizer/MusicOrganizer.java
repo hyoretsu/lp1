@@ -62,6 +62,34 @@ public class MusicOrganizer {
  }
 
  /**
+  * List the names of files matching the given search string.
+  *
+  * @param query The string to match.
+  */
+ public void listMatching(String query) {
+  // Exercise 4.26
+  Boolean found = false;
+
+  for (Integer i = 0; i < files.size(); i++) {
+   String file = files.get(i);
+
+   if (file.contains(query)) {
+    System.out.println(file);
+
+    // Exercise 4.26
+    if (!found) {
+     found = true;
+    }
+   }
+  }
+
+  // Exercise 4.26
+  if (!found) {
+   System.out.println("No files were found");
+  }
+ }
+
+ /**
   * Play a file in the collection. Only return once playing has finished.
   *
   * @param index The index of the file to be played.
