@@ -60,4 +60,15 @@ public class MusicOrganizer {
    files.remove(index);
   }
  }
+
+ // Exercise 4.15
+ public Boolean validIndex(Integer index) {
+  Integer size = files.size();
+
+  if (index < 0 || index >= size) {
+   return false;
+  }
+
+  return true;
+ }
 }
