@@ -101,6 +101,15 @@ public class MusicOrganizer {
   }
  }
 
+ // Exercise 4.27
+ public void playSamples(String artist) {
+  files.forEach(file -> {
+   if (file.contains(artist)) {
+    player.playSample(file);
+   }
+  });
+ }
+
  /**
   * Remove a file from the collection.
   *
