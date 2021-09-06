@@ -168,7 +168,11 @@ public class MusicOrganizer {
  /** Play the first track in the collection, if there is one. */
  public void playFirst() {
   if (tracks.size() > 0) {
-   player.startPlaying(tracks.get(0).getFilename());
+   // Exercise 4.36
+   Track track = tracks.get(0);
+
+   player.startPlaying(track.getFilename());
+   track.incrementCount();
   }
  }
 
