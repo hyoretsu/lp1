@@ -17,6 +17,8 @@ public class Club {
   * @param member The member object to be added.
   */
  public void join(Membership member) {
+  // Exercise 4.42
+  this.memberships.add(member);
  }
 
  /** @return The number of members (Membership objects) in the club. */
