@@ -21,6 +21,7 @@ public class Club {
 
  /** @return The number of members (Membership objects) in the club. */
  public int numberOfMembers() {
-  return 0;
+  // Exercise 4.41
+  return this.memberships.size();
  }
 }
