@@ -1,6 +1,7 @@
 package com.hyoretsu.lp1.music_organizer;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MusicOrganizer {
  /** An ArrayList for storing music tracks. */
@@ -182,6 +183,14 @@ public class MusicOrganizer {
    player.startPlaying(track.getFilename());
    track.incrementCount();
   }
+ }
+
+ // Exercise 4.43
+ public void playRandomTrack() {
+  Integer randomIndex = new Random().nextInt(tracks.size());
+  String randomTrack = tracks.get(randomIndex).getFilename();
+
+  player.startPlaying(randomTrack);
  }
 
  // Exercise 4.27
