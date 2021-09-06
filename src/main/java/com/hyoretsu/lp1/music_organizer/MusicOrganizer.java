@@ -33,6 +33,39 @@ public class MusicOrganizer {
  }
 
  /**
+  * Find the index of the first file matching the given search string.
+  *
+  * @param searchString The string to match.
+  * @return The index of the first occurrence, or -1 if no match is found.
+  */
+ public int findFirst(String searchString) {
+  int index = 0;
+  // Record that we will be searching until a match is found.
+  boolean searching = true;
+
+  // Exercise 4.34
+  Integer totalSize = files.size();
+
+  while (searching && index < totalSize) {
+   String filename = files.get(index);
+   if (filename.contains(searchString)) {
+    // A match. We can stop searching.
+    searching = false;
+   } else {
+    // Move on.
+    index++;
+   }
+  }
+  if (searching) {
+   // We didn't find it.
+   return -1;
+  } else {
+   // Return where it was found.
+   return index;
+  }
+ }
+
+ /**
   * Return the number of files in the collection.
   *
   * @return The number of files in the collection.
