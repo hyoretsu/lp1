@@ -215,6 +215,17 @@ public class MusicOrganizer {
   }
  }
 
+ public void removeAllContaining(String query) {
+  for (Integer i = 0; i < tracks.size(); i++) {
+   String trackName = tracks.get(i).getFilename();
+
+   if (trackName.contains(query)) {
+    tracks.remove(i);
+   }
+   ;
+  }
+ }
+
  /**
   * Remove a track from the collection.
   *
