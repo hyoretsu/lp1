@@ -25,6 +25,7 @@ public class TrackReader {
  private Track decodeDetails(File file) {
   // The information needed.
   String artist = "unknown";
+  String genre = "unknown";
   String title = "unknown";
   String filename = file.getPath();
 
@@ -43,7 +44,7 @@ public class TrackReader {
     title = titlePart;
    }
   }
-  return new Track(artist, title, filename);
+  return new Track(artist, title, genre, filename);
  }
 
  /**

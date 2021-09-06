@@ -80,6 +80,14 @@ public class MusicOrganizer {
   }
  }
 
+ public void filterByGenre(String genre) {
+  this.tracks.forEach(track -> {
+   if (track.getGenre() == genre) {
+    System.out.println(track.getDetails());
+   }
+  });
+ }
+
  /**
   * Return the number of tracks in the collection.
   *
