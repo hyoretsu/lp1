@@ -92,6 +92,8 @@ public class MusicPlayer {
   */
  public void startPlaying(final String filename) {
   try {
+   // Exercise 4.36
+   killPlayer();
    setupPlayer(filename);
    Thread playerThread = new Thread() {
     public void run() {
