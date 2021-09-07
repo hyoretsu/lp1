@@ -63,6 +63,19 @@ public class Auction {
   }
  }
 
+ // Exercise 4.49
+ public ArrayList<Lot> getUnsold() {
+  ArrayList<Lot> unsoldLots = new ArrayList<>();
+
+  lots.forEach(lot -> {
+   if (lot.getHighestBid() == null) {
+    unsoldLots.add(lot);
+   }
+  });
+
+  return unsoldLots;
+ }
+
  /**
   * Make a bid for a lot. A message is printed indicating whether the bid is
   * successful or not.
