@@ -14,6 +14,20 @@ public class Auction {
   nextLotNumber = 1;
  }
 
+ // Exercise 4.48
+ public void close() {
+  for (Lot lot : lots) {
+   System.out.println(lot.getDescription());
+
+   Bid lotBid = lot.getHighestBid();
+   if (lotBid != null) {
+    System.out.println("This lot was purchased by " + lotBid.getBidder() + " for the value of " + lotBid.getValue());
+   } else {
+    System.out.println("This lot doesn't have any bidders yet");
+   }
+  }
+ }
+
  /**
   * Enter a new lot into the auction.
   *
