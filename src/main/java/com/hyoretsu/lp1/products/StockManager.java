@@ -17,7 +17,10 @@ public class StockManager {
   * @param item The item to be added.
   */
  public void addProduct(Product item) {
-  stock.add(item);
+  // Exercise 4.60
+  if (this.findProduct(item.getID()) == null) {
+   stock.add(item);
+  }
  }
 
  /**
@@ -36,6 +39,15 @@ public class StockManager {
   }
  }
 
+ // Exercise 4.60
+ public void findCritical(int lowerLimit) {
+  stock.forEach(product -> {
+   if (product.getQuantity() < lowerLimit) {
+    System.out.println(product.toString());
+   }
+  });
+ }
+
  /**
   * Try to find a product in the stock with the given id.
   *
@@ -45,6 +57,17 @@ public class StockManager {
   // Exercise 4.57
   for (Product product : stock) {
    if (product.getID() == id) {
+    return product;
+   }
+  }
+
+  return null;
+ }
+
+ // Exercise 4.60
+ public Product findProduct(String name) {
+  for (Product product : stock) {
+   if (product.getName().equals(name)) {
     return product;
    }
   }
