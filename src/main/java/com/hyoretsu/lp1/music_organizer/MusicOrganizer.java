@@ -1,6 +1,7 @@
 package com.hyoretsu.lp1.music_organizer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class MusicOrganizer {
@@ -183,6 +184,16 @@ public class MusicOrganizer {
    player.startPlaying(track.getFilename());
    track.incrementCount();
   }
+ }
+
+ // Exercise 4.43
+ public void playRandom() {
+  ArrayList<Track> randomQueue = (ArrayList<Track>) tracks.clone();
+  Collections.shuffle(randomQueue);
+
+  randomQueue.forEach(song -> {
+   player.startPlaying(song.getFilename());
+  });
  }
 
  // Exercise 4.43
