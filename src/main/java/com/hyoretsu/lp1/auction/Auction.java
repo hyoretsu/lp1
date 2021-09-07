@@ -108,6 +108,27 @@ public class Auction {
   }
  }
 
+ /**
+  * Remove the lot with the given lot number.
+  *
+  * @param number The number of the lot to be removed.
+  * @return The Lot with the given number, or null if there is no such lot.
+  */
+ public Lot removeLot(int number) {
+  // Exercise 4.52
+  for (Integer i = 0; i < lots.size(); i++) {
+   Lot lot = lots.get(i);
+
+   if (lot.getNumber() == number) {
+    lots.remove(i);
+
+    return lot;
+   }
+  }
+
+  return null;
+ }
+
  /** Show the full list of lots in this auction. */
  public void showLots() {
   for (Lot lot : lots) {
