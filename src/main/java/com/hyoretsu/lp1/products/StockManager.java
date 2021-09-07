@@ -36,6 +36,13 @@ public class StockManager {
   * @return The identified product, or null if there is none with a matching ID.
   */
  public Product findProduct(int id) {
+  // Exercise 4.57
+  for (Product product : stock) {
+   if (product.getID() == id) {
+    return product;
+   }
+  }
+
   return null;
  }
 
