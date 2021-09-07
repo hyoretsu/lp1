@@ -47,7 +47,16 @@ public class Auction {
  public Lot getLot(int lotNumber) {
   // The number seems to be reasonable.
   if ((lotNumber >= 1) && (lotNumber < nextLotNumber)) {
-   Lot selectedLot = lots.get(lotNumber - 1);
+   // Exercise 4.51
+   Lot selectedLot = null;
+
+   for (Lot lot : lots) {
+    if (lot.getNumber() == lotNumber) {
+     selectedLot = lot;
+     break;
+    }
+   }
+
    // Include a confidence check to be sure we have the
    // right lot.
    if (selectedLot.getNumber() != lotNumber) {
