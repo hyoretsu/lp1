@@ -54,7 +54,14 @@ public class StockManager {
   * @return The quantity of the given product in stock.
   */
  public int numberInStock(int id) {
-  return 0;
+  // Exercise 4.58
+  Product foundProduct = this.findProduct(id);
+
+  if (foundProduct == null) {
+   return 0;
+  }
+
+  return foundProduct.getQuantity();
  }
 
  /** Print details of all the products. */
