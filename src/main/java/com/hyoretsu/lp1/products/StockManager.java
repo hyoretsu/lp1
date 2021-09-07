@@ -28,6 +28,12 @@ public class StockManager {
   * @param amount The amount to increase the quantity by.
   */
  public void delivery(int id, int amount) {
+  // Exercise 4.59
+  Product foundProduct = this.findProduct(id);
+
+  if (foundProduct != null) {
+   foundProduct.increaseQuantity(amount);
+  }
  }
 
  /**
