@@ -32,22 +32,23 @@ public class Room {
   * @return A description of the available exits.
   */
  public String getExitString() {
-  String options = "Exits: ";
+  String options = "Exits:";
 
-  if (exits.get("north") != null) {
-   options += "north ";
-  }
-  if (exits.get("east") != null) {
-   options += "east ";
-  }
-  if (exits.get("south") != null) {
-   options += "south ";
-  }
-  if (exits.get("west") != null) {
-   options += "west ";
+  for (String exit : exits.keySet()) {
+   options += " " + exit;
   }
 
   return options;
+ }
+
+ /**
+  * Return a long description of this room, of the form: "You are in the kitchen.
+  * Exits: north west"
+  *
+  * @return A description of the room, including exits.
+  */
+ public String getLongDescription() {
+  return "You are " + description + ".\n" + this.getExitString();
  }
 
  /**
