@@ -1,11 +1,11 @@
 package com.hyoretsu.lp1.zuul;
 
 public class Room {
- public String description;
- public Room northExit;
- public Room southExit;
- public Room eastExit;
- public Room westExit;
+ private String description;
+ private Room northExit;
+ private Room southExit;
+ private Room eastExit;
+ private Room westExit;
 
  /**
   * Create a room described "description". Initially, it has no exits.
@@ -20,6 +20,21 @@ public class Room {
  /** @return The description of the room. */
  public String getDescription() {
   return description;
+ }
+
+ public Room getExit(String direction) {
+  switch (direction) {
+   case "north":
+    return northExit;
+   case "east":
+    return eastExit;
+   case "south":
+    return southExit;
+   case "west":
+    return westExit;
+   default:
+    return null;
+  }
  }
 
  /**
