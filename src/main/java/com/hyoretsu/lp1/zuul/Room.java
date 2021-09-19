@@ -38,6 +38,30 @@ public class Room {
  }
 
  /**
+  * Return a description of the room’s exits, for example, "Exits: north west".
+  *
+  * @return A description of the available exits.
+  */
+ public String getExitString() {
+  String options = "Exits: ";
+
+  if (this.northExit != null) {
+   options += "north ";
+  }
+  if (this.eastExit != null) {
+   options += "east ";
+  }
+  if (this.southExit != null) {
+   options += "south ";
+  }
+  if (this.westExit != null) {
+   options += "west ";
+  }
+
+  return options;
+ }
+
+ /**
   * Define the exits of this room. Every direction either leads to another room
   * or is null (no exit there).
   *
