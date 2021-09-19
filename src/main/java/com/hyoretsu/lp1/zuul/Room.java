@@ -1,11 +1,11 @@
 package com.hyoretsu.lp1.zuul;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Room {
  private String description;
- private Room northExit;
- private Room southExit;
- private Room eastExit;
- private Room westExit;
+ private Map<String, Room> exits = new HashMap<>();
 
  /**
   * Create a room described "description". Initially, it has no exits.
@@ -23,18 +23,7 @@ public class Room {
  }
 
  public Room getExit(String direction) {
-  switch (direction) {
-   case "north":
-    return northExit;
-   case "east":
-    return eastExit;
-   case "south":
-    return southExit;
-   case "west":
-    return westExit;
-   default:
-    return null;
-  }
+  return exits.get(direction);
  }
 
  /**
@@ -45,16 +34,16 @@ public class Room {
  public String getExitString() {
   String options = "Exits: ";
 
-  if (this.northExit != null) {
+  if (exits.get("north") != null) {
    options += "north ";
   }
-  if (this.eastExit != null) {
+  if (exits.get("east") != null) {
    options += "east ";
   }
-  if (this.southExit != null) {
+  if (exits.get("south") != null) {
    options += "south ";
   }
-  if (this.westExit != null) {
+  if (exits.get("west") != null) {
    options += "west ";
   }
 
@@ -62,26 +51,12 @@ public class Room {
  }
 
  /**
-  * Define the exits of this room. Every direction either leads to another room
-  * or is null (no exit there).
+  * Define an exit from this room.
   *
-  * @param north The north exit.
-  * @param east  The east east.
-  * @param south The south exit.
-  * @param west  The west exit.
+  * @param direction The direction of the exit.
+  * @param neighbor  The room in the given direction.
   */
- public void setExits(Room north, Room east, Room south, Room west) {
-  if (north != null) {
-   northExit = north;
-  }
-  if (east != null) {
-   eastExit = east;
-  }
-  if (south != null) {
-   southExit = south;
-  }
-  if (west != null) {
-   westExit = west;
-  }
+ public void setExit(String direction, Room neighbor) {
+  exits.put(direction, neighbor);
  }
 }
