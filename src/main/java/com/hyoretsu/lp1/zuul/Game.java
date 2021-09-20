@@ -34,6 +34,10 @@ public class Game {
   currentRoom = outside; // start game outside
  }
 
+ private void eat() {
+  System.out.println("You have eaten now and you are not hungry anymore.");
+ }
+
  /**
   * Try to go in one direction. If there is an exit, enter the new room,
   * otherwise print an error message.
@@ -120,6 +124,8 @@ public class Game {
    goRoom(command);
   } else if (commandWord.equals("look")) {
    this.look();
+  } else if (commandWord.equals("eat")) {
+   this.eat();
   } else if (commandWord.equals("quit")) {
    wantToQuit = quit(command);
   }
