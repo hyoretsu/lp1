@@ -54,8 +54,12 @@ public class Game {
    System.out.println("There is no door!");
   } else {
    currentRoom = nextRoom;
-   printLocationInfo();
+   look();
   }
+ }
+
+ private void look() {
+  System.out.println(currentRoom.getLongDescription());
  }
 
  /** Main play routine. Loops until end of play. */
@@ -85,19 +89,14 @@ public class Game {
   System.out.println("   go quit help");
  }
 
- private void printLocationInfo() {
-  System.out.println(currentRoom.getLongDescription());
- }
-
- /**
-  * Print out the opening message for the player. */
+ /** Print out the opening message for the player. */
  private void printWelcome() {
   System.out.println();
   System.out.println("Welcome to the World of Zuul!");
   System.out.println("World of Zuul is a new, incredibly boring adventure game.");
   System.out.println("Type 'help' if you need help.");
   System.out.println();
-  printLocationInfo();
+  this.look();
  }
 
  /**
@@ -119,6 +118,8 @@ public class Game {
    printHelp();
   } else if (commandWord.equals("go")) {
    goRoom(command);
+  } else if (commandWord.equals("look")) {
+   this.look();
   } else if (commandWord.equals("quit")) {
    wantToQuit = quit(command);
   }

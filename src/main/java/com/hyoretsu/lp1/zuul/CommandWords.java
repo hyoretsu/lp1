@@ -1,7 +1,7 @@
 package com.hyoretsu.lp1.zuul;
 
 public class CommandWords {
- private static final String[] validCommands = { "go", "quit", "help" };
+ private static final String[] validCommands = { "go", "quit", "help", "look" };
 
  /** Constructor - initialise the command words. */
  public CommandWords() {
