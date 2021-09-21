@@ -22,11 +22,13 @@ public class CommandWords {
   return false;
  }
 
- public void showAll() {
+ public String getCommandList() {
+  String availableCommands = "";
+
   for (String command : validCommands) {
-   System.out.print(command + " ");
+   availableCommands += command + " ";
   }
 
-  System.out.println();
+  return availableCommands;
  }
 }
